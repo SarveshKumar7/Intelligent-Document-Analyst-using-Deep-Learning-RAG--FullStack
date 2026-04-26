@@ -1,0 +1,32 @@
+---
+- name: Configure K8s worker nodes
+  hosts: k8s_nodes
+  become: true
+
+  tasks:
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start and enable Docker
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: Install kubectl
+      shell: |
+        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+    - name: Copy kubeconfig
+      copy:
+        src: ~/.kube/config
+        dest: /home/ubuntu/.kube/config
+        owner: ubuntu
+        mode: '0600'

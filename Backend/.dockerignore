@@ -1,0 +1,74 @@
+# Virtual environment - CRITICAL to exclude
+rag_env/
+venv/
+env/
+.venv/
+
+# Node
+node_modules
+src/node_modules
+src/package.json
+src/package-lock.json
+package.json
+package-lock.json
+
+# Python cache
+__pycache__
+src/__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+
+# Environment
+.env
+.env.*
+
+# Git
+.git
+.gitignore
+
+# Notebooks
+notebooks/
+*.ipynb
+
+# Uploads
+uploads/
+src/uploads/
+
+# Cache and build
+.pytest_cache
+dist/
+build/
+
+# Large model files
+*.bin
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Huggingface cache
+.cache/
+src/.cache/
+huggingface/
+home/
+
+# Terraform
+terraform/
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large data files
+*.csv
+*.parquet
+*.db
+*.sqlite
+data/

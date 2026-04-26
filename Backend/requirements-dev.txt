@@ -1,0 +1,13 @@
+jupyter
+notebook
+ipython
+ipykernel
+ipywidgets
+
+matplotlib
+seaborn
+
+scikit-learn
+scipy
+
+debugpy
