@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: sarveshkumar7/rag-backend:latest
+        image: sarveshkumar7/rag-backend:v4
         ports:
         - containerPort: 8000
         envFrom:
